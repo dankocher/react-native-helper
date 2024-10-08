@@ -8,6 +8,14 @@ npx react-native init <ProjectName>
 yarn add react-native-gesture-handler react-native-haptic-feedback react-native-localize react-native-safe-area-context react-native-safe-area-view react-native-svg react-native-device-info react-native-reanimated @react-native-clipboard/clipboard react-native-json-tree react-native-linear-gradient react-native-shadow-2
 ```
 
+#### Reanimated
+
+add to file ```babel.config.js```
+
+```bash
+  plugins: ['react-native-reanimated/plugin']
+```
+
 # DEV
 ```bash
 yarn add googleapis yarn-upgrade-all
