@@ -18,7 +18,7 @@ add to file ```babel.config.js```
 
 # DEV
 ```bash
-yarn add googleapis yarn-upgrade-all
+yarn add googleapis yarn-upgrade-all reactotron-redux reactotron-react-native -D
 ```
 
 
