@@ -48,8 +48,52 @@ yarn add react-native-iap
 
 
 
-#Blur
+# Blur
 add to package.json
 ```bash
 "@react-native-community/blur": "https://github.com/dankocher/react-native-blur.git"
+```
+
+
+# React Native Visio Camera
+If in android is black screen open file ```node_modules/react-native-cision-camera/src/useSkiaFrameProcessor.ts``` and add next code to function ```withRotatedFrame``` in line 93
+```js
+    switch (orientation) {
+      case 'portrait':
+        if (Platform.OS === "android") {
+          canvas.translate( 0,frame.height / 2)
+        }
+        // do nothing
+        break
+      case 'landscape-left':
+        if (Platform.OS === "ios") {
+          // rotate two flips on (0,0) origin and move X + Y into view again
+          canvas.translate(frame.height, frame.width)
+          canvas.rotate(270, 0, 0)
+        } else {
+
+          // rotate two flips on (0,0) origin and move X + Y into view again
+          canvas.translate(0, frame.width)
+          canvas.rotate(270, 0, 0)
+        }
+        break
+      case 'portrait-upside-down':
+        if (Platform.OS === "ios") {
+          // rotate three flips on (0,0) origin and move Y into view again
+          canvas.translate(frame.width, frame.height)
+          canvas.rotate(180, 0, 0)
+        } else {
+          // rotate three flips on (0,0) origin and move Y into view again
+          canvas.translate(frame.width, frame.height * 1.5)
+          canvas.rotate(180, 0, 0)
+        }
+        break
+      case 'landscape-right':
+        // rotate one flip on (0,0) origin and move X into view again
+        canvas.translate(frame.height, 0)
+        canvas.rotate(90, 0, 0)
+        break
+      default:
+        throw new Error(`Invalid frame.orientation: ${frame.orientation}!`)
+    }
 ```
