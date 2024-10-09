@@ -97,3 +97,14 @@ If in android is black screen open file ```node_modules/react-native-cision-came
         throw new Error(`Invalid frame.orientation: ${frame.orientation}!`)
     }
 ```
+
+and in ```node_modules/react-native-cision-camera/src/Camera.ts``` in styles in line 690
+
+```js
+  customPreviewView: {
+    flex: 1,
+    transform: [
+      {scaleX: Platform.OS === "android" ? -1 : 1}
+    ]
+  },
+```
