@@ -5,7 +5,17 @@ npx react-native init <ProjectName>
 
 # Basics
 ```bash
-yarn add react-native-gesture-handler react-native-haptic-feedback react-native-localize react-native-safe-area-context react-native-safe-area-view react-native-svg react-native-device-info react-native-reanimated @react-native-clipboard/clipboard react-native-json-tree react-native-linear-gradient react-native-shadow-2
+yarn add react-native-gesture-handler react-native-haptic-feedback react-native-localize react-native-safe-area-context react-native-svg react-native-reanimated
+```
+
+# Basics Dev
+```bash
+yarn add react-native-gesture-handler react-native-device-info @react-native-clipboard/clipboard react-native-json-tree
+```
+
+# Shadow and gradient
+```bash
+yarn add react-native-shadow-2 react-native-linear-gradient
 ```
 
 #### Reanimated
